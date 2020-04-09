@@ -21,14 +21,14 @@ after_success:
     - docker push b3a3a/multi-server
     - docker push b3a3a/multi-worker
 
-    deploy:
-        provider: elasticbeanstalk
-        region: "ap-southeast-1"
-        app: "multi-docker"
-        env: "MultiDocker-env"
-        bucker_name: "elasticbeanstalk-ap-southeast-1-742347738784"
-        bucker_path: "docker-multi"
-        on:
-            branch: master
-        access_key_id: $AWS_ACCESS_KEY
-        secret_access_key: $AWS_SECRET_KEY
+deploy:
+    provider: elasticbeanstalk
+    region: "ap-southeast-1"
+    app: "multi-docker"
+    env: "MultiDocker-env"
+    bucker_name: "elasticbeanstalk-ap-southeast-1-742347738784"
+    bucker_path: "docker-multi"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
